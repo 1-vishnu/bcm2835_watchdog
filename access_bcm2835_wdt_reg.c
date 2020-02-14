@@ -18,11 +18,11 @@ int main()
 
 	mem = mmio_map_simple(PM_RSTS, REGISTER_BYTE_SIZE);
 	ret = mmio_read32(mem);
-	printf("PM_RSTC: %x\n", ret);
+	printf("PM_RSTS: %x\n", ret);
 
 	mem = mmio_map_simple(PM_WDOG, REGISTER_BYTE_SIZE);
 	ret = mmio_read32(mem);
-	printf("PM_RSTC: %x\n", ret);
+	printf("PM_WDOG: %x\n", ret);
 
 	return 0;
 }
