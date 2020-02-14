@@ -10,6 +10,7 @@
 int main()
 {
 	void *mem;
+	ssize_t mem_size;
 	uint32_t ret;
 
 	// read
@@ -28,13 +29,15 @@ int main()
 	*/
 	
 	//write
-	mem = mmio_map_simple(PM_RSTC, REGISTER_BYTE_SIZE);
+	mem_size = 4;
+	
+	mem = mmio_map_simple(PM_RSTC, mem_size);
 	mmio_write32(mem, (uint32_t)1);
 
-	mem = mmio_map_simple(PM_RSTS, REGISTER_BYTE_SIZE);
+	mem = mmio_map_simple(PM_RSTS, mem_size);
 	mmio_write32(mem, (uint32_t)1);
 	
-	mem = mmio_map_simple(PM_WDOG, REGISTER_BYTE_SIZE);
+	mem = mmio_map_simple(PM_WDOG, mem_size);
 	mmio_write32(mem, (uint32_t)1);
 
 	return 0;
