@@ -5,8 +5,6 @@
 #define PM_RSTS 0x7e100020
 #define PM_WDOG 0x7e100024
 
-#define REGISTER_BYTE_SIZE 4
-
 int main()
 {
 	void *mem;
